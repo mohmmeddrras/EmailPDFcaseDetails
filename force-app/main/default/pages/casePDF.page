@@ -1,0 +1,4 @@
+<apex:page standardcontroller="Case" renderAs="PDF">
+    
+    <apex:detail />
+</apex:page>
