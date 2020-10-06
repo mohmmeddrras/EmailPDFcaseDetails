@@ -1,4 +1,30 @@
-<apex:page standardcontroller="Case" renderAs="PDF">
+<apex:page standardcontroller="Case" renderAs="PDF" showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false">
+       <html>
+    <head>
+        <style>
+            @page {
+                size: letter;
+                margin: 25mm;
+                @top-center {
+                    content: "{!Case.ContactId}";
+                }
+                @bottom-center {
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+            .page-break {
+                display:block;
+                page-break-after:always;
+            }
+            body {
+                font-family: Arial Unicode MS;
+            }
+        </style>
+    </head>
+           <body>
+                <apex:detail />
+           </body>
+   </html>
+   
     
-    <apex:detail />
 </apex:page>
